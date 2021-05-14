@@ -171,3 +171,19 @@ alert(filhoPoliformisado1.getValor()) // retorna 25
 var filhoPoliformisado2 = Object.create(paiPoliformisado)
 filhoPoliformisado2.valor = 4
 alert(filhoPoliformisado2.getValor()) // retorna 9
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+// Utilizando instanceof e a propriedade prototype
+
+function Pai(valor) { // propriedade privada
+    this.valor = valor
+}
+
+Pai.prototype.get = function funcao() { // método público para acessar a propriedade privada
+    return this.valor
+}
+
+var instanciaPai = new Pai(20)
+alert(instanciaPai.get()) // retorna 20
+alert(instanciaPai instanceof Pai) // retorna true
